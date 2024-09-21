@@ -1,42 +1,40 @@
-'use client';
-
+import '../styles/styles.css';
 import React from 'react';
 import ButtonCTA from '@/components/ButtonCTA';
 import SignupForm from '@/components/SignupForm';
 import ProjectSlider from '@/components/ProjectSlider';
-import { Box, Container, Heading, VStack } from '@chakra-ui/react';
+import { Box, Container, Flex, Heading, VStack } from '@chakra-ui/react';
+import Accordion from '@/components/Accordion';
 
-const Home: React.FC = () => {
+
+export default function HomePage() {
   return (
-    <Container maxW="container.lg" py={8}>
-      <Box as="header" textAlign="center" mb={8}>
+    <Container maxW="100vw" p={0} m={0}>
+      <Box className="section bg-gray-100">
         <Heading>Welcome to Nextjs10000</Heading>
       </Box>
 
-      <VStack spacing={8}>
-        <Box as="section" textAlign="center">
-          <Heading as="h2" size="lg" mb={4}>
-            Dont miss out!
-          </Heading>
-          <ButtonCTA />
-        </Box>
+      <Box className="section bg-gray-200">
+        <Heading as="h2" size="lg" mb={4}>
+          Don't miss out!
+        </Heading>
+        <ButtonCTA />
+        <Accordion />
+      </Box>
 
-        <Box as="section">
-          <Heading as="h2" size="lg" mb={4}>
-            Sign Up for Updates
-          </Heading>
-          <SignupForm />
-        </Box>
+      <Box className="section bg-gray-300">
+        <Heading as="h2" size="lg" mb={4}>
+          Sign Up for Updates
+        </Heading>
+        <SignupForm />
+      </Box>
 
-        <Box as="section">
-          <Heading as="h2" size="lg" mb={4}>
-            Our Projects
-          </Heading>
-          <ProjectSlider />
-        </Box>
-      </VStack>
+      <Box className="section bg-gray-400">
+        <Heading as="h2" size="lg" mb={4}>
+          Our Projects
+        </Heading>
+        <ProjectSlider />
+      </Box>
     </Container>
   );
-};
-
-export default Home;
+}
